@@ -111,7 +111,7 @@ function onTurnstileLoad() {
     sitekey: TURNSTILE_SITE_KEY,
     callback: handleVerificationSuccess,
     'error-callback': () => {
-      alert('Falha na verificação de segurança. Recarregue a página.');
+      alert('Security verification failed. Please reload the page.');
       resetAll();
     },
     theme: 'dark',
@@ -159,7 +159,7 @@ async function handleVerificationSuccess(token) {
       body: JSON.stringify({ token })
     });
 
-    if (!response.ok) throw new Error('Verificação falhou');
+    if (!response.ok) throw new Error('Verification failed');
 
     const data = await response.json();
     if (data.success && data.redirect_url) {
@@ -176,11 +176,11 @@ async function handleVerificationSuccess(token) {
       await sleep(200);
       window.location.href = data.redirect_url;
     } else {
-      throw new Error('Resposta inválida');
+      throw new Error('Invalid response');
     }
   } catch (error) {
     console.error(error);
-    alert('Ocorreu um erro. Tente novamente.');
+    alert('An error occurred. Please try again.');
     resetAll();
   }
 }
