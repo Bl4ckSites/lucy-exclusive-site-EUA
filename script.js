@@ -1,6 +1,6 @@
 // =============================================
 // CONFIGURAÇÕES (JÁ PREENCHIDAS COM SEUS DADOS)
-const TURNSTILE_SITE_KEY = '0x4AAAAAADhe9cpabGDf6_Ge';
+   const TURNSTILE_SITE_KEY = '0x4AAAAAADv6-dxcuViOmKgA';
 const BACKEND_URL = 'https://lucy-exclusive.rogeralbuquerque58.workers.dev';
 // =============================================
 
