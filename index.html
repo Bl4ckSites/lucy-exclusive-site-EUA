@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Access - Lucy</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+</head>
+<body>
+    <div class="bg-layer"></div>
+    <div class="blur-orb orb-1"></div>
+    <div class="blur-orb orb-2"></div>
+    <div class="blur-orb orb-3"></div>
+    
+    <canvas id="particlesCanvas"></canvas>
+    
+    <div class="container">
+        <div class="gift-wrapper" id="giftBox" tabindex="0" role="button" aria-label="Open the gift box">
+            <div class="gift-glow"></div>
+            <div class="gift-lid">
+                <div class="lid-top"></div>
+                <div class="lid-front"></div>
+                <div class="lid-shine"></div>
+            </div>
+            <div class="gift-base">
+                <div class="base-front"></div>
+                <div class="base-inner"></div>
+            </div>
+            <div class="gift-ribbon-vertical">
+                <div class="ribbon-shine"></div>
+            </div>
+            <div class="gift-ribbon-horizontal">
+                <div class="ribbon-shine"></div>
+            </div>
+            <div class="gift-bow">
+                <div class="bow-loop bow-left"></div>
+                <div class="bow-loop bow-right"></div>
+                <div class="bow-center"></div>
+            </div>
+            <div class="sparkle-container" id="sparkleContainer"></div>
+            <div class="open-flash" id="openFlash"></div>
+        </div>
+        
+        <p class="touch-text">Tap the box to open</p>
+    </div>
+    
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader-ring"></div>
+        <p>Preparing your surprise...</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
